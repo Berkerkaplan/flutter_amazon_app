@@ -71,7 +71,7 @@ class _AddressScreenState extends State<AddressScreen> {
   }
 
   void onGooglePayResult(res) {
-    addressServices.saveUserAddress(context: context, address: addressToBeUsed);
+    //addressServices.saveUserAddress(context: context, address: addressToBeUsed);
     if (Provider.of<UserProvider>(context, listen: false)
         .user
         .address
@@ -218,7 +218,7 @@ class _AddressScreenState extends State<AddressScreen> {
                       height: 50,
                       width: double.infinity,
                       type: GooglePayButtonType.buy,
-                      paymentConfigurationAsset: 'google.json',
+                      paymentConfigurationAsset: 'gpay.json',
                       onPaymentResult: onGooglePayResult,
                       paymentItems: paymentItems,
                       margin: const EdgeInsets.only(top: 15),

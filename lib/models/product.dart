@@ -26,7 +26,7 @@ class Product {
   //rating
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    return {
       'name': name,
       'description': description,
       'price': price,
@@ -48,7 +48,11 @@ class Product {
       images: List<String>.from(map['images']),
       id: map['_id'],
       rating: map['ratings'] != null
-          ? List<Rating>.from(map['ratings']?.map((x) => Rating.fromJson(x)))
+          ? List<Rating>.from(
+              map['ratings']?.map(
+                (x) => Rating.fromMap(x),
+              ),
+            )
           : null,
     );
   }

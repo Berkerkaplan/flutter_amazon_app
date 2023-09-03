@@ -69,7 +69,7 @@ class _OrdersState extends State<Orders> {
                 padding: const EdgeInsets.only(left: 10, top: 20, right: 0),
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
+                  //shrinkWrap: true,
                   itemCount: orders!.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(

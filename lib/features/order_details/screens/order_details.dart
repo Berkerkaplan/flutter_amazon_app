@@ -150,7 +150,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       )}',
                     ),
                     Text('Order Id:     ${widget.order.id}'),
-                    Text('Order Price:  \$${widget.order.totalPrice}'),
+                    Text('Order Total:  \$${widget.order.totalPrice}'),
                   ],
                 ),
               ),
@@ -229,6 +229,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                     if (userProvider == 'admin') {
                       return CustomButton(
                         text: 'Done',
+                        color: Colors.blueAccent,
                         onTap: () {
                           changeOrderStatus(details.currentStep);
                         },
@@ -238,7 +239,10 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   },
                   steps: [
                     Step(
-                      title: const Text('Pending'),
+                      title: const Text(
+                        'Pending',
+                        style: TextStyle(color: Colors.black),
+                      ),
                       content: const Text(
                         'Your order is yet to be delivered',
                       ),
@@ -251,6 +255,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       title: const Text('Completed'),
                       content: const Text(
                         'Your order has been delivered, you are yet to sign.',
+                        style: TextStyle(color: Colors.black),
                       ),
                       isActive: currentStep > 1,
                       state: currentStep > 1
@@ -261,6 +266,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       title: const Text('Recieved'),
                       content: const Text(
                         'Your order has been delivered and signed by you.',
+                        style: TextStyle(color: Colors.black),
                       ),
                       isActive: currentStep > 2,
                       state: currentStep > 2
@@ -271,6 +277,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       title: const Text('Delivered'),
                       content: const Text(
                         'Your order has been delivered and signed by you!',
+                        style: TextStyle(color: Colors.black),
                       ),
                       isActive: currentStep >= 3,
                       state: currentStep >= 3

@@ -80,7 +80,7 @@ class AddressServices {
         },
       );
     } catch (e) {
-      debugPrint('${e.toString()} placed order');
+      //xsdebugPrint('${e.toString()} placed order');
       showSnackBar(context, e.toString());
     }
   }

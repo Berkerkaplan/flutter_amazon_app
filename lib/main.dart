@@ -40,14 +40,14 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    debugPrint("token:" + Provider.of<UserProvider>(context).user.token);
+    //debugPrint("token:${Provider.of<UserProvider>(context).user.token}");
     return MaterialApp(
       title: 'Amazon APP',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
         colorScheme: const ColorScheme.light(
-          primary: Color.fromARGB(255, 2, 81, 41),
+          primary: Color.fromARGB(255, 63, 228, 195),
           //          primary: Color.fromARGB(255, 14, 179, 168),
         ),
         appBarTheme: const AppBarTheme(
